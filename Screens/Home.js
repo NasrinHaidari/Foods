@@ -15,8 +15,11 @@ export default function App() {
         <ImageSlider
             style={styles.imageSlider}
             images={images}
+            autoPlayWithInterval={7000}
         />
       </View>
+
+      <Text style={styles.categoryText}>Categories</Text>
     </View>
   );
 }
@@ -31,5 +34,10 @@ const styles = StyleSheet.create({
     },
     imageSlider: {
         borderRadius: 10
+    },
+    categoryText: {
+      margin: 10,
+      fontSize: 16,
+      fontWeight: "bold"
     }
 });

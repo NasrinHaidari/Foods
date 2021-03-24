@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { StyleSheet, Text, View, FlatList} from 'react-native';
 import ImageSlider from 'react-native-image-slider'
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Home from './Screens/Home'
+import Detail from './Screens/Detail'
 
 import { NavigationContainer } from '@react-navigation/native' // NavigationContainer is parent of Navigation
 import { createStackNavigator} from '@react-navigation/stack' // Top Navigation
@@ -54,9 +55,14 @@ function HomeStack() {
     }}
     >
       <Stack.Screen
-        name="Home"
-        component={Home}
+        name="Home" // Route name
+        component={Home} // Page that should show
         options={{title: "Home Page"}}
+      />
+
+      <Stack.Screen
+        name="Detail"
+        component= {Detail}
       />
 
     </Stack.Navigator>

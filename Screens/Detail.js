@@ -8,7 +8,7 @@ export default function Detail() {
     const data = useRoute().params
     const {name, price, image, detail}= data
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
         <Image
         style= {{height: 190}}
         source={{uri: image}}
@@ -26,7 +26,7 @@ export default function Detail() {
             <Text>{detail}</Text>
         </View>
         <Button title="Add to favorite" color="#777777"/>
-    </View>
+    </ScrollView>
   );
 }
 

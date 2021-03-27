@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Home from './Screens/Home'
 import Detail from './Screens/Detail'
+import Favorite from './Screens/Favorite'
 
 import { NavigationContainer } from '@react-navigation/native' // NavigationContainer is parent of Navigation
 import { createStackNavigator} from '@react-navigation/stack' // Top Navigation
@@ -35,9 +36,22 @@ export default function App() {
               />
             )
           }}
-        >
+        />
+        <Tab.Screen
+          name="Favorite"
+          component={FavoriteStack}
+          options={{
+            tabBarLabel: "Favorite",
+            tabBarIcon: ({color, size}) => (
+              <MaterialCommunityIcons
+                name= "heart"
+                color={color}
+                size={size}
+              />
+            )
+          }}
+        />
 
-        </Tab.Screen>
       </Tab.Navigator>
 
     </NavigationContainer>
@@ -63,6 +77,26 @@ function HomeStack() {
       <Stack.Screen
         name="Detail"
         component= {Detail}
+      />
+
+    </Stack.Navigator>
+  )
+}
+
+function FavoriteStack() {
+  return (
+    <Stack.Navigator
+    initialRouteName= "Favorite"
+    screenOptions= {{
+      headerStyle: {backgroundColor: "#841548"},
+      headerTintColor: "#fff",
+      headerTitleStyle: {fontWeight: "bold"}
+    }}
+    >
+      <Stack.Screen
+        name="Favorite" // Route name
+        component={Favorite} // Page that should show
+        options={{title: "Favorite Page"}}
       />
 
     </Stack.Navigator>

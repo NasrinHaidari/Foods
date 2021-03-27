@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, FlatList} from 'react-native';
+import FavoriteItems from '../Components/FavoriteItems'
 
 export default function Favorite() {
     const foods = [
@@ -16,7 +17,12 @@ export default function Favorite() {
       
   return (
     <View style={styles.container}>
-    
+        <FlatList
+            data={foods}
+            renderItem={({item}) => {
+                return <FavoriteItems name={item.name} image={item.image} price={item.price}/>
+            }}
+        />
     </View>
   );
 }

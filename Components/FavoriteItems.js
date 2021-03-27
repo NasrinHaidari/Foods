@@ -2,17 +2,17 @@ import React from 'react';
 import { StyleSheet, Text, View, Image} from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons' // use icon in bottom Navigation
 
-export default function FavoriteItems() {
+export default function FavoriteItems({image, price, name}) {
       
   return (
     <View style={styles.container}>
       <Image
         style={styles.image}
-        source={{uri: require("../assets/pizza.jpg")}}
+        source={{uri: image}}
       />
       <View style={styles.content}>
-        <Text style={styles.name}>Pizza</Text>
-        <Text style={styles.price}>20$</Text>
+        <Text style={styles.name}>{name}</Text>
+        <Text style={styles.price}>{price}</Text>
       </View>
       <MaterialCommunityIcons
         style={{ alignSelf: "center" }}

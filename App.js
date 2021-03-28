@@ -1,8 +1,10 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+
 import Home from './Screens/Home'
 import Detail from './Screens/Detail'
 import Favorite from './Screens/Favorite'
+import Profile from './Screens/Profile'
 
 import { NavigationContainer } from '@react-navigation/native' // NavigationContainer is parent of Navigation
 import { createStackNavigator} from '@react-navigation/stack' // Top Navigation
@@ -45,6 +47,21 @@ export default function App() {
             tabBarIcon: ({color, size}) => (
               <MaterialCommunityIcons
                 name= "heart"
+                color={color}
+                size={size}
+              />
+            )
+          }}
+        />
+
+        <Tab.Screen
+          name="Profile"
+          component={ProfileStack}
+          options={{
+            tabBarLabel: "Profile",
+            tabBarIcon: ({color, size}) => (
+              <MaterialCommunityIcons
+                name= "account"
                 color={color}
                 size={size}
               />
@@ -101,6 +118,27 @@ function FavoriteStack() {
 
     </Stack.Navigator>
   )
+}
+
+  function ProfileStack() {
+    return (
+      <Stack.Navigator
+      initialRouteName= "Profile"
+      screenOptions= {{
+        headerStyle: {backgroundColor: "#841548"},
+        headerTintColor: "#fff",
+        headerTitleStyle: {fontWeight: "bold"}
+      }}
+      >
+        <Stack.Screen
+          name="Profile" // Route name
+          component={Profile} // Page that should show
+          options={{title: "Profile Page"}}
+        />
+  
+      </Stack.Navigator>
+    )
+
 }
 
 

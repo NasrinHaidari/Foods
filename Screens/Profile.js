@@ -7,7 +7,7 @@ export default function Profile() {
     <View style={styles.container}>
         <Image
             style={{ height: 200 }}
-            source= {{uri: require("../assets/Profile.js")}}
+            source= {{uri: require("../assets/Profile.jpg")}}
         />
 
         <ProfileItems name="Username" value="Nasrin Haidari"/>

@@ -1,17 +1,22 @@
 import React from 'react';
 import { StyleSheet, View, Text} from 'react-native';
 
-export default function Profile() {
+export default function ProfileItems({name, value}) {
   return (
     <View style={styles.container}>
-        <Text></Text>
-        <Text></Text>
+        <Text style={styles.txt}>{name}</Text>
+        <Text>{value}</Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        margin: 8
+    },
+    txt: {
+        fontWeight: "bold",
+        fontSize: 16,
+        marginTop: 8
     }
 });

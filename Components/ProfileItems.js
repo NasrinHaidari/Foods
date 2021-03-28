@@ -4,7 +4,7 @@ import { StyleSheet, View, Text} from 'react-native';
 export default function Profile() {
   return (
     <View style={styles.container}>
-        <Text style={styles.txt}></Text>
+        <Text></Text>
         <Text></Text>
     </View>
   );
@@ -12,11 +12,6 @@ export default function Profile() {
 
 const styles = StyleSheet.create({
     container: {
-        margin: 8
-    },
-    txt: {
-        fontWeight: "bold",
-        fontSize: 16,
-        marginTop: 8
+        flex: 1
     }
 });
